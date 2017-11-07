@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>projeto-teste</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>admin@example.com</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>BussinessService</servlet-name>
+		<servlet-class>com.wesley.service.BussinessService</servlet-class>
+		<display-name>Bussiness</display-name>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BussinessService</servlet-name>
+		<url-pattern>/empresa</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>HouseService</servlet-name>
+		<servlet-class>com.wesley.service.HouseService</servlet-class>
+
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>John Doe</param-value>
+		</init-param>
+
+		<!-- Inicializar a Servlet ao subir o servidor -->
+
+		<!-- Não inicializa -->
+		<load-on-startup>-1</load-on-startup>
+
+		<!-- Inicializa -->
+		<load-on-startup>0</load-on-startup>
+
+		<!-- Inicializa -->
+		<load-on-startup>1</load-on-startup>
+
+		<!-- Inicializar a Servlet ao subir o servidor -->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HouseService</servlet-name>
+		<url-pattern>/casa</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HouseService</servlet-name>
+		<url-pattern>/house</url-pattern>
+	</servlet-mapping>
+
+</web-app>
